@@ -14,7 +14,9 @@ const Firstcontainer = () => {
             {/* <img alt="Shoes" className="rounded-xl" /> */}
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title font-extrabold">Forced Cooling</h2>
+            <h2 className="card-title font-extrabold uppercase">
+              Forced Cooling
+            </h2>
             <p>
               An AC cooling system uses a refrigerant to absorb heat from indoor
               air, cooling the space through a cycle of compression and
@@ -27,107 +29,43 @@ const Firstcontainer = () => {
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIElEQVR4nO3csU0DQRBAUZdBhuSbZugGidLuaMcROSJHQOYOYL/xe9I0MP92N7vTCQAAAACAf+CY+TaT2YEgsz6CILN+8YLMjQZZ/abdG0FiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkR5NaCmGn9SNmMID6CcUKO6G2w+k0DgKt92172bftY/Tgevz3bdnk9n5/S6Y/Hx4dj5nP5subPoryd6kH2ma/lixpBrvaZ52Pm/Q5OxyV/ZQEAAAAAcFrjB7XSgnOMmQR5AAAAAElFTkSuQmCC" />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
+            <h2 className="card-title  font-extrabold uppercase">
+              Flat Screen TV
+            </h2>
+            <p>
+              An LED TV uses light-emitting diodes for backlighting, offering
+              bright, clear visuals with energy efficiency and slim design.
+            </p>
           </div>
         </div>
         <div className="card bg-base-100 w-96 shadow-xl">
           <figure className="px-10 pt-10">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-xl"
-            />
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACRklEQVR4nO2ZPU4cQRBGJ4NbIFEfWnETSOyQAxkOY4eeBoc+hx3YASaAlBTJ1iTWgLRTI/WyXb31njTZMFtVr77eH4YBAAAAABpQpL9c2tkMEKJYC4UQtZeAECUSsoO3pVQUhMQCIcFASDAQEgyEBIOPvWr/0ZbvIWo/aISo/XARovYDbS7k3d+kqKcOhASbD0KWQYiSH6HpB+CAEJGQ3EeEAwkRQnJvpAMJEUJyb6QDCRFCcm+kAwkRQnJvpAMJEUJyb6QDCRFCcm+kAwkRQnJvpAMJEUL2spHF7ONo9jRKj6PZh9qNXPu86roP9V+4xezh/+uY/amtZ+3zqus+WCFaOegd37evurt7wYIQhOwCEiKOLI6sBUiISAgJWYCEiISQkAVIiEgICVmAhIiE7CUho9nv2Y+Bv2o3cu3zajnYhNyenl6OZvfTVcwuautZ+7xaDlbIWtLXk34ADiREyRObfgAOCBEJyX1EOJAQIST3RjqQECEk90Y6kBAhJPdGOpAQIST3RjqQECEk90Y6kBAhJPdGOpAQIST3RjqQECEk90ZGTwiXFmeAEMVaEoSovQSEqP3gwwjZdt9Xs6s3976MZp++bTabO+loCM73k5PjqdZRup5qn/cy9bbt78IKKdKX+X2TjKFTinTzqhfpc49Cfs7vm7Zt6JRydnb+RsiP/oSYPc/v6+GYWjq+XvVt9tyfkH0XlrXvsIVl7TtsYVn7DltY1r69L0LbrqFzStS+wxaWte+whWXtO2xh70zWvgEAYOiGf9gMYGQ40uQnAAAAAElFTkSuQmCC" />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
+            <h2 className="card-title font-extrabold uppercase">
+              Custom Built-ins
+            </h2>
+            <p>
+              Custom builds involve creating tailored structures or systems,
+              designed to meet specific requirements or preferences, offering
+              personalized functionality and design.
+            </p>
           </div>
         </div>
         <div className="card bg-base-100 w-96 shadow-xl">
           <figure className="px-10 pt-10">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-xl"
-            />
+            <img src="data:image/png;base64,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"></img>
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card bg-base-100 w-96 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-xl"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card bg-base-100 w-96 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-xl"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card bg-base-100 w-96 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-xl"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card bg-base-100 w-96 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className="rounded-xl"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
+            <h2 className="card-title font-extrabold uppercase">
+              Advanced Addons
+            </h2>
+            <p>
+              Advanced Addons are enhanced plugins or extensions that provide
+              extra features, customization, and functionality for software or
+              platforms.
+            </p>
           </div>
         </div>
       </div>

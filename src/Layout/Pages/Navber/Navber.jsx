@@ -1,10 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../../assets/logo-removebg-preview.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   console.log(user);
 
@@ -13,7 +28,11 @@ const Navber = () => {
   };
   return (
     <div>
-      <div className="navbar fixed top-0 left-0 z-50 bg-transparent  px-4 py-3 w-full text-white">
+      <div
+        className={`navbar fixed top-0 left-0 z-50 ${
+          isScrolled ? "bg-white font-black" : "bg-transparent "
+        } px-4 py-3 w-full text-white`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn  lg:hidden">
