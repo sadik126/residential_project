@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AwesomeButtonShare } from "react-awesome-button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [password, showsetPassword] = useState(false);
@@ -17,19 +18,23 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+
     signinUser(email, password)
       .then((result) => {
         console.log(result);
         navigate(location?.state ? location.state : "/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        toast.error("please input correct email or password");
+      });
   };
   return (
     <div className="mt-5">
       <h2 className="text-2xl text-center mt-[15rem] font-extrabold">
         Please login your account
       </h2>
-      <form onClick={handleLogin} className="card-body lg:w-1/4 mx-auto">
+      <form onSubmit={handleLogin} className="card-body lg:w-1/4 mx-auto">
         <div className="form-control">
           <label className="label">
             <span className="label-text font-extrabold">Email address</span>
