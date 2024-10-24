@@ -4,6 +4,7 @@ import Root from "../Layout/Pages/Root";
 import Home from "../Layout/Pages/Home/Home";
 import Login from "../Layout/Pages/Login/Login";
 import Register from "../Layout/Pages/Register/Register";
+import Details from "../Layout/Pages/Details/Details";
 
 const Router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const Router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/estate/:id",
+        element: <Details></Details>,
       },
     ],
   },

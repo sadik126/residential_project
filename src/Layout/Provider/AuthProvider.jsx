@@ -23,8 +23,9 @@ const AuthProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         setEstates(data.estates);
+        setLoading(false);
       });
-  }, []);
+  }, [estates]);
 
   // if (loading) {
   //   return (
@@ -70,6 +71,7 @@ const AuthProvider = ({ children }) => {
     signinUser,
     logOut,
     estates,
+    loading,
   };
 
   return (
