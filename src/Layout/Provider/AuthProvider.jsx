@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         setEstates(data.estates);
-        setLoading(false);
       });
   }, [estates]);
 

@@ -3,18 +3,18 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Estate from "./Estate";
 
 const Estates = () => {
-  const { estates } = useContext(AuthContext);
+  // const { estates } = useContext(AuthContext);
 
   // console.log(estates);
-  //   const [estates, setEstates] = useState([]);
+  const [estates, setEstates] = useState([]);
 
-  //   useEffect(() => {
-  //     fetch("/Residential.json")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data.estates);
-  //       });
-  //   }, []);
+  useEffect(() => {
+    fetch("/Residential.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setEstates(data.estates);
+      });
+  }, []);
   return (
     <div className="mt-16  md:w-[90%] mx-auto">
       <h1 className="text-5xl font-extrabold text-center uppercase">

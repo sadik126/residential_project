@@ -4,25 +4,28 @@ import Estate from "../Estates/Estate";
 import { IoSearchCircleSharp } from "react-icons/io5";
 
 const Estatesection = () => {
-  const { estates } = useContext(AuthContext);
+  const { estates, loading } = useContext(AuthContext);
+  // const [estates, setEstates] = useState([]);
 
   const [display, setDisplay] = useState(estates);
   const [data, setData] = useState(5000000);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // useEffect(() => {
-  //   const storedEstates = JSON.parse(localStorage.getItem("displayEstates"));
-  //   if (storedEstates) {
-  //     setDisplay(storedEstates);
-  //   } else {
-  //     setDisplay(estates);
-  //   }
-  // }, [estates]);
+  if (loading) {
+    return <span className="loading loading-spinner loading-lg"></span>;
+  }
 
-  // // Save display data to local storage whenever it changes
   // useEffect(() => {
-  //   localStorage.setItem("displayEstates", JSON.stringify(display));
-  // }, [display]);
+  //   setDisplay(estates);
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch("/Residential.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setDisplay(data.estates);
+  //     });
+  // }, []);
 
   const handlefilter = (e) => {
     const selectedvalue = e.target.value;
