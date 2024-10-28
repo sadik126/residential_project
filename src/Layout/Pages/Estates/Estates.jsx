@@ -5,7 +5,7 @@ import Estate from "./Estate";
 const Estates = () => {
   const { estates } = useContext(AuthContext);
 
-  console.log(estates);
+  // console.log(estates);
   //   const [estates, setEstates] = useState([]);
 
   //   useEffect(() => {

@@ -7,7 +7,7 @@
       "segment_name": "Villas",
       "image": "https://www.propertyfinder.eg/property/1c273601b3f85ed1b802ad3b689650d1/416/272/MODE/9c4614/5914765-2dce9o.webp?ctr=eg",
       "description": "A stunning 5-bedroom luxury villa located in the heart of Beverly Hills with breathtaking views.",
-      "price": "4,500,000",
+      "price": "4500000",
       "status": "sale",
       "area": "5000 sqft",
       "location": "Beverly Hills, CA",
@@ -17,7 +17,9 @@
         "Kitchen",
         "Gym",
         "Home theater"
-      ]
+      ],
+      "lat": 34.080292,
+      "long": -118.404678
     },
     {
       "id": 2,
@@ -25,7 +27,7 @@
       "segment_name": "Apartments",
       "image": "https://imgs.search.brave.com/VHkxjOGSGV3--4jsRM-iMZh_P7VZstz-ZUCfdvV6VQA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL2htZy1wcm9k/L2ltYWdlcy9oYngw/OTAxMjR0aG9tYXNq/YW1lcy0wMTEtNjZk/YjMzOWU2MTlmZi5q/cGc_Y3JvcD0xLjAw/eHc6MC43NzZ4aDsw/LDAuMTk2eGgmcmVz/aXplPTM2MDoq",
       "description": "A high-rise modern apartment with 3 bedrooms in the vibrant center of Manhattan.",
-      "price": "2,300,000",
+      "price": "2300000",
       "status": "sale",
       "area": "2500 sqft",
       "location": "Manhattan, New York",
@@ -35,7 +37,9 @@
         "Kitchen",
         "Balcony",
         "Parking space"
-      ]
+      ],
+      "lat": 40.75325,
+      "long": -74.003807
     },
     {
       "id": 3,
@@ -43,11 +47,13 @@
       "segment_name": "Cottages",
       "image": "https://imgs.search.brave.com/r72MzLjgztR6ZR5GJZwvE1gphqSc5VyBEjbHA1Ok7zg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bXlnbG9iYWx2aWV3/cG9pbnQuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzAz/LzlhLVByaXZhdGUt/Q2FiaW4taW4tdGhl/LVdvb2RzLWluLVZl/cm1vbnQuanBn",
       "description": "A charming 2-bedroom cottage surrounded by nature, perfect for a peaceful getaway.",
-      "price": "1,200",
+      "price": "1200",
       "status": "rent",
       "area": "1800 sqft",
       "location": "Burlington, Vermont",
-      "facilities": ["Living room", "Kitchen", "Garden", "Fireplace"]
+      "facilities": ["Living room", "Kitchen", "Garden", "Fireplace"],
+      "lat": 44.47599,
+      "long": -73.210999
     },
     {
       "id": 4,
@@ -55,7 +61,7 @@
       "segment_name": "Condos",
       "image": "https://imgs.search.brave.com/HavcgoK49jlAojoWr1YDZ5PxbVUX_qIIVz52LGT22vI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hcC5y/ZGNwaXguY29tLzll/YzFlZmE4MjM1ZGFm/NWYyNTFiODg2NmVk/NmZjODMybC1tMjI4/NDk2Nzg1cmQtdzk2/MF9oNzIwLmpwZw",
       "description": "A luxury 2-bedroom beachfront condo with stunning ocean views and direct beach access.",
-      "price": "3,800",
+      "price": "3800",
       "status": "rent",
       "area": "2000 sqft",
       "location": "Miami Beach, Florida",
@@ -65,7 +71,9 @@
         "Kitchen",
         "Gym",
         "Private beach access"
-      ]
+      ],
+      "lat": 25.790653,
+      "long": -80.130043
     }
   ]
 }

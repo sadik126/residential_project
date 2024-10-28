@@ -44,7 +44,7 @@ const Estate = ({ estate }) => {
 
             <div className="badge badge-outline">{area}</div>
           </div>
-          <button className="btn btn-error uppercase font-extrabold btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+          <button className="btn btn-error uppercase font-extrabold btn-xs sm:btn-sm md:btn-md lg:btn-lg mt-3">
             <Link to={`/estate/${id}`}>show details</Link>
           </button>
         </div>

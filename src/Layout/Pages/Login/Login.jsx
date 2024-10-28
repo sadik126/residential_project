@@ -4,14 +4,27 @@ import { AwesomeButtonShare } from "react-awesome-button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import app from "../../../../firebase.config";
 
 const Login = () => {
   const [password, showsetPassword] = useState(false);
+  const provider = new GoogleAuthProvider();
+  // const auth = getAuth(app);
 
-  const { signinUser } = useContext(AuthContext);
+  const { signinUser, googlelogin } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handlegooglelogin = () => {
+    googlelogin(provider)
+      .then((res) => {
+        console.log(res);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => console.error(err));
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -82,7 +95,10 @@ const Login = () => {
       </p>
       <div className="divider lg:w-1/4 w-1/2 mx-auto">OR</div>
       <div className="flex md:flex-row flex-col gap-3 justify-center lg:w-1/4 w-1/2 mx-auto">
-        <button class="flex items-center sm:btn-sm md:btn-md lg:btn-lg bg-white dark:bg-gray-900 border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800 dark:text-white hover:bg-black-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+        <button
+          onClick={handlegooglelogin}
+          class="flex items-center sm:btn-sm md:btn-md lg:btn-lg bg-white dark:bg-gray-900 border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800 dark:text-white hover:bg-black-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+        >
           <svg
             class="h-6 w-6 mr-2"
             xmlns="http://www.w3.org/2000/svg"

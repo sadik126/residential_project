@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Layout/Provider/AuthProvider";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 const Protectedrouted = ({ children }) => {
   const { loading, user } = useContext(AuthContext);
@@ -13,7 +13,7 @@ const Protectedrouted = ({ children }) => {
   if (user) {
     return children;
   }
-  return <Location state={location.pathname} to="/login"></Location>;
+  return <Navigate state={location.pathname} to="/login"></Navigate>;
 };
 
 export default Protectedrouted;
