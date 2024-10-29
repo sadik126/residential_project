@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Estate from "../Estates/Estate";
 import { IoSearchCircleSharp } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 const Estatesection = () => {
   const { estates, loading } = useContext(AuthContext);
@@ -59,6 +60,10 @@ const Estatesection = () => {
   };
   return (
     <div className="mt-24 md:w-[90%] mx-auto">
+      <Helmet>
+        <title>Estates</title>
+      </Helmet>
+      ;
       <h1 className="text-5xl font-extrabold text-center uppercase">
         All Estates
       </h1>

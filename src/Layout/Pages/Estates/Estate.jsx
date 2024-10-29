@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Estate = ({ estate }) => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const {
     image,
     estate_title,
@@ -13,8 +18,8 @@ const Estate = ({ estate }) => {
     id,
   } = estate;
   return (
-    <>
-      <div className="card bg-base-100 w-96 shadow-xl">
+    <div>
+      <div className="card bg-base-100  shadow-xl" data-aos="fade-up">
         <figure>
           <img className="h-60 w-96" src={image} alt="Shoes" />
         </figure>
@@ -49,7 +54,7 @@ const Estate = ({ estate }) => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

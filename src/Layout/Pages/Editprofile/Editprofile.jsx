@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Editprofile = () => {
   const { user } = useContext(AuthContext);
@@ -11,10 +14,21 @@ const Editprofile = () => {
     const email = form.get("email");
     const image = form.get("image");
 
+    updateProfile(user, {
+      displayName: name,
+      email: email,
+      photoURL: image,
+    })
+      .then(() => toast.success("Your profile updated successfully"))
+      .catch(() => toast.error("sorry try again"));
+
     console.log(name, email, image);
   };
   return (
     <div>
+      <Helmet>
+        <title>{user?.displayName}</title>
+      </Helmet>
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse w-3/4 mt-16">
           <div className="text-center flex flex-col items-center gap-5 lg:text-left md:w-1/2 w-full">

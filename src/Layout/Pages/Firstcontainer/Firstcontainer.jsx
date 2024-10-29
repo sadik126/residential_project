@@ -1,6 +1,13 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const Firstcontainer = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="mt-16 md:w-3/4 w-full mx-auto">
+    <div className="mt-16 md:w-3/4 w-full mx-auto" data-aos="fade-down">
       <h1 className="text-5xl font-extrabold text-center uppercase">
         Home Features
       </h1>

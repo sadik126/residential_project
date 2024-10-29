@@ -6,6 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import app from "../../../../firebase.config";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [password, showsetPassword] = useState(false);
@@ -44,6 +45,10 @@ const Login = () => {
   };
   return (
     <div className="mt-5">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
+      ;
       <h2 className="text-2xl text-center mt-[15rem] font-extrabold">
         Please login your account
       </h2>

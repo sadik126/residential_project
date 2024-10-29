@@ -1,12 +1,18 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Estate from "./Estate";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Estates = () => {
   // const { estates } = useContext(AuthContext);
 
   // console.log(estates);
   const [estates, setEstates] = useState([]);
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   useEffect(() => {
     fetch("/Residential.json")

@@ -13,6 +13,7 @@ import rent from "../../../assets/rent.png";
 import map from "../../../assets/map.png";
 import location from "../../../assets/location.png";
 import GoogleMapReact from "google-map-react";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const { id } = useParams();
@@ -44,6 +45,10 @@ const Details = () => {
   console.log(estate);
   return (
     <div className="mt-40">
+      <Helmet>
+        <title>Details</title>
+      </Helmet>
+      ;
       <div className="grid md:grid-cols-6 md:w-3/4 mx-auto">
         <div className="col-span-4">
           <h1 className="text-4xl font-extrabold uppercase">

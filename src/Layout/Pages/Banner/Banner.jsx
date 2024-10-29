@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div>
+    <>
       <div className="carousel w-full h-[55rem]">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={banner1} className="w-full" />
@@ -172,7 +172,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

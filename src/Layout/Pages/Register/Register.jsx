@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { sendEmailVerification, updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -71,6 +72,10 @@ const Register = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title> Register</title>
+      </Helmet>
+      ;
       <h2 className="text-2xl text-center mt-[15rem] font-extrabold">
         Please sign up your account
       </h2>

@@ -1,9 +1,13 @@
 import React from "react";
 import about from "../../../assets/about.jpg";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
     <div>
+      <Helmet>
+        <title> About</title>
+      </Helmet>
       <div
         className="hero md:min-h-[60vh] min-h-[137vh]"
         style={{

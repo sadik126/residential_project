@@ -57,7 +57,7 @@ const Navber = () => {
                 <NavLink
                   className={({ isActive, isPending }) =>
                     isActive
-                      ? "btn text-white  btn-error"
+                      ? "btn text-white   btn-error"
                       : isPending
                       ? "pending"
                       : "btn btn-outline btn-error mt-5"
@@ -71,10 +71,10 @@ const Navber = () => {
                 <NavLink
                   className={(isActive, isPending) =>
                     isActive
-                      ? "btn text-white btn-error mt-5"
+                      ? "btn text-white  btn-error mt-5"
                       : isPending
                       ? "pending"
-                      : "btn btn-outline btn-error mr-5"
+                      : "btn btn-outline btn-error mt-5"
                   }
                   to={"/estates"}
                 >
@@ -82,14 +82,32 @@ const Navber = () => {
                 </NavLink>
               </li>
               <li>
-                <Link className="btn btn-info mt-5" to={"/about"}>
+                <NavLink
+                  className={(isActive, isPending) =>
+                    isActive
+                      ? "btn text-white btn-error mt-5"
+                      : isPending
+                      ? "pending"
+                      : "btn btn-outline btn-error mt-5"
+                  }
+                  to={"/about"}
+                >
                   ABOUT
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="btn btn-info mt-5" to={"/contact"}>
+                <NavLink
+                  className={(isActive, isPending) =>
+                    isActive
+                      ? "btn text-white btn-error mt-5"
+                      : isPending
+                      ? "pending"
+                      : "btn btn-outline btn-error mt-5"
+                  }
+                  to={"/contact"}
+                >
                   CONTACT US
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -157,38 +175,40 @@ const Navber = () => {
           </ul>
         </div>
         <div className="navbar-end text-black">
-          <div className="flex-none">
-            <div className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar tooltip"
-                data-tip={user?.displayName}
-              >
-                <div className="w-10 rounded-full">
-                  {user && <img alt="image" src={user?.photoURL} />}
+          {user && (
+            <div className="flex-none">
+              <div className="dropdown dropdown-end">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar tooltip"
+                  data-tip={user?.displayName}
+                >
+                  <div className="w-10 rounded-full">
+                    {user && <img alt="image" src={user?.photoURL} />}
+                  </div>
                 </div>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                >
+                  <li>
+                    <Link to={"/edit"} className="justify-between">
+                      Edit Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <a>Wishlist</a>
+                  </li>
+                  <li>
+                    <Link onClick={handlesignout} to={"/login"}>
+                      Logout
+                    </Link>
+                  </li>
+                </ul>
               </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-              >
-                <li>
-                  <Link to={"/edit"} className="justify-between">
-                    Edit Profile
-                  </Link>
-                </li>
-                <li>
-                  <a>Wishlist</a>
-                </li>
-                <li>
-                  <Link onClick={handlesignout} to={"/login"}>
-                    Logout
-                  </Link>
-                </li>
-              </ul>
             </div>
-          </div>
+          )}
           {user ? (
             <span className="text-white ml-5 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
               Welcome , {user?.displayName}
