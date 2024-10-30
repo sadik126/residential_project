@@ -1,30 +1,93 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AwesomeButtonShare } from "react-awesome-button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  getAuth,
+  GoogleAuthProvider,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithPopup,
+} from "firebase/auth";
 import app from "../../../../firebase.config";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [password, showsetPassword] = useState(false);
   const provider = new GoogleAuthProvider();
-  // const auth = getAuth(app);
+  const fbprovider = new FacebookAuthProvider();
+  const emailRef = useRef(null);
+  const auth = getAuth(app);
 
-  const { signinUser, googlelogin } = useContext(AuthContext);
+  const { signinUser, googlelogin, fblogin } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  const resetpassword = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      toast.error("please enter your email");
+      return;
+    }
+
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toast.success("please check your email");
+      })
+      .catch((error) => console.log(error));
+    console.log(email);
+  };
 
   const handlegooglelogin = () => {
     googlelogin(provider)
       .then((res) => {
         console.log(res);
+        // sendEmailVerification(res).then(() =>
+        //   toast.success("verification sent")
+        // );
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => console.error(err));
+  };
+
+  const handlefacebooklogin = () => {
+    fblogin(fbprovider)
+      .then((result) => {
+        const user = result.user;
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+        // const token = result.credential.accessToken;
+
+        console.log(result);
+        // sendEmailVerification(result).then(() =>
+        //   toast.success("verification sent.please check your email")
+        // );
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+
+        if (
+          error.message ==
+          "Firebase: Error (auth/account-exists-with-different-credential)."
+        ) {
+          toast.error(
+            "this user already have another account. please login in previous one"
+          );
+        }
+
+        // ...
+      });
   };
 
   const handleLogin = (e) => {
@@ -36,6 +99,9 @@ const Login = () => {
     signinUser(email, password)
       .then((result) => {
         console.log(result);
+        sendEmailVerification(result).then(() =>
+          toast.success("verification sent")
+        );
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
@@ -61,6 +127,7 @@ const Login = () => {
             type="email"
             placeholder="email"
             name="email"
+            ref={emailRef}
             className="input input-bordered"
             required
           />
@@ -83,7 +150,10 @@ const Login = () => {
             {password ? <FaEye /> : <FaEyeSlash />}
           </span>
           <label className="label">
-            <a href="#" className="label-text-alt link link-hover">
+            <a
+              onClick={resetpassword}
+              className="label-text-alt link link-hover"
+            >
               Forgot password?
             </a>
           </label>
@@ -164,6 +234,7 @@ const Login = () => {
         </button>
 
         <button
+          onClick={handlefacebooklogin}
           type="button"
           class="text-white sm:btn-sm md:btn-md lg:btn-lg bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 "
         >

@@ -3,6 +3,8 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import { MdVerified } from "react-icons/md";
+import { TbAlertSquareRoundedFilled } from "react-icons/tb";
 
 const Editprofile = () => {
   const { user } = useContext(AuthContext);
@@ -35,16 +37,25 @@ const Editprofile = () => {
             <h1 className="text-5xl  font-bold text-center">Update now</h1>
             <div className="avatar">
               <div className="w-32 rounded">
-                <img src={user?.photoURL} />
+                <img src={user.photoURL} />
               </div>
             </div>
             <p className="py-6 text-2xl text-center">
               {" "}
-              Name:
-              <span className="  text-red-800 ml-5">
-                {user.displayName}
-              </span>{" "}
-            </p>
+              Name:{" "}
+              <span>
+                {user?.emailVerified === true ? (
+                  <div className="badge badge-success">
+                    {user.displayName} verified <MdVerified />
+                  </div>
+                ) : (
+                  <div className="badge badge-error">
+                    {user.displayName} not verified
+                    <TbAlertSquareRoundedFilled />
+                  </div>
+                )}
+              </span>
+            </p>{" "}
             <p className=" text-2xl text-center">
               {" "}
               Email:

@@ -10,6 +10,7 @@ import Estatesection from "../Layout/Pages/Estatesection/Estatesection";
 import About from "../Layout/Pages/About/About";
 import Contact from "../Layout/Pages/Contact/Contact";
 import Editprofile from "../Layout/Pages/Editprofile/Editprofile";
+import Wishlist from "../Layout/Pages/Wishlist/Wishlist";
 
 const Router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist></Wishlist>,
       },
       {
         path: "/edit",

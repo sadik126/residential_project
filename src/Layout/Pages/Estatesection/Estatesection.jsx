@@ -17,7 +17,11 @@ const Estatesection = () => {
   }
 
   // useEffect(() => {
-  //   setDisplay(estates);
+  //   fetch("/Residential.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setDisplay(data.estates);
+  //     });
   // }, []);
 
   // useEffect(() => {

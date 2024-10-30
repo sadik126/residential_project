@@ -50,6 +50,11 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
+  const fblogin = (provider) => {
+    setLoading(true);
+    return signInWithPopup(auth, provider);
+  };
+
   const signinUser = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
@@ -79,6 +84,7 @@ const AuthProvider = ({ children }) => {
     estates,
     loading,
     googlelogin,
+    fblogin,
   };
 
   return (

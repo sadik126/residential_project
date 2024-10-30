@@ -14,6 +14,8 @@ import map from "../../../assets/map.png";
 import location from "../../../assets/location.png";
 import GoogleMapReact from "google-map-react";
 import { Helmet } from "react-helmet-async";
+import { savewishlist } from "../../Localstorage";
+import toast from "react-hot-toast";
 
 const Details = () => {
   const { id } = useParams();
@@ -42,7 +44,12 @@ const Details = () => {
   }
 
   const estate = estates.find((e) => e.id === intId);
-  console.log(estate);
+
+  const handlewishlist = () => {
+    savewishlist(intId);
+    toast.success("added item in the wishlist successfully");
+  };
+
   return (
     <div className="mt-40">
       <Helmet>
@@ -132,7 +139,7 @@ const Details = () => {
                   Book
                   <FaCartArrowDown />
                 </button>
-                <button className="btn btn-error">
+                <button onClick={handlewishlist} className="btn btn-error">
                   Wishlist
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

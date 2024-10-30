@@ -198,7 +198,7 @@ const Navber = () => {
                     </Link>
                   </li>
                   <li>
-                    <a>Wishlist</a>
+                    <Link to={"/wishlist"}>Wishlist</Link>
                   </li>
                   <li>
                     <Link onClick={handlesignout} to={"/login"}>

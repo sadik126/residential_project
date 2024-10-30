@@ -23,7 +23,7 @@ const Register = () => {
     setEmailerror("");
     setNameerror("");
 
-    if (name.length > 10) {
+    if (name.length > 20) {
       setNameerror("your name is too long , please keep short");
       return;
     }
