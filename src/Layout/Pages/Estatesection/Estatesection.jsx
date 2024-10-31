@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Estate from "../Estates/Estate";
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { Helmet } from "react-helmet-async";
+import { saveallestates } from "../../Localstorage";
 
 const Estatesection = () => {
   const { estates, loading } = useContext(AuthContext);
@@ -20,15 +21,8 @@ const Estatesection = () => {
   //   fetch("/Residential.json")
   //     .then((res) => res.json())
   //     .then((data) => {
-  //       setDisplay(data.estates);
-  //     });
-  // }, []);
-
-  // useEffect(() => {
-  //   fetch("/Residential.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setDisplay(data.estates);
+  //       setEstates(data.estates);
+  //       setDisplay(estates);
   //     });
   // }, []);
 

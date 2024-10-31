@@ -6,6 +6,20 @@ const getwishlist = () => {
   return [];
 };
 
+const getallestates = () => {
+  const storedestates = localStorage.getItem("estates");
+  if (storedestates) {
+    return JSON.parse(storedestates);
+  }
+  return [];
+};
+
+const saveallestates = () => {
+  const getestates = getallestates();
+
+  localStorage.setItem("estates", JSON.stringify(getestates));
+};
+
 const savewishlist = (id) => {
   const getallwishlist = getwishlist();
 
@@ -17,4 +31,4 @@ const savewishlist = (id) => {
   }
 };
 
-export { getwishlist, savewishlist };
+export { getwishlist, savewishlist, getallestates, saveallestates };
