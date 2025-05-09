@@ -30,3 +30,24 @@
 ```bash
 git clone https://github.com/sadik126/residential_project.git
 cd residential_project
+
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Visit: [http://localhost:5173](http://localhost:5173)
+
+## 🤝 Contributing
+
+Open for contributions! Fork this repo and send a pull request.
+
+---
