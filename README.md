@@ -1,8 +1,32 @@
-# React + Vite
+![Holdings Reality Banner](https://i.ibb.co.com/nNKYJZM9/real-estate.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🏠 Holdings Reality
 
-Currently, two official plugins are available:
+**Holdings Reality** is a modern real estate web application for showcasing residential projects. It features a clean UI, dynamic listings, and a responsive layout, making it easy to explore properties across devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Website
+
+👉 [https://holdings-reality.web.app/](https://holdings-reality.web.app/)
+
+## 🛠️ Key Features
+
+- 🏢 **Real Estate Listings** – Browse featured and new projects  
+- 📱 **Responsive Design** – Mobile-friendly and adaptable layout  
+- 🧭 **Navigation & Layout** – User-friendly experience with clean sections  
+- 🎨 **Admin-like Controls** – Easily extendable for property management
+
+## 🧰 Technologies Used
+
+| Technology                                                                                    | Description                                           |
+| --------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| ![React.js](https://img.icons8.com/color/48/000000/react-native.png) **React.js**             | Frontend library for building interactive interfaces  |
+| ![Tailwind CSS](https://img.icons8.com/color/48/000000/tailwindcss.png) **Tailwind CSS**      | Utility-first CSS framework for fast UI development   |
+| ![Firebase Hosting](https://img.icons8.com/color/48/000000/firebase.png) **Firebase Hosting** | Hosting platform for deploying the application        |
+
+## 🚀 Setting Up the Project Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sadik126/residential_project.git
+cd residential_project
